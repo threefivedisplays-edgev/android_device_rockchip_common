@@ -54,6 +54,13 @@ else
     echo "Build uboot failed!"
     exit 1
 fi
+
+# copy rk3126c trust
+if [ "$DEVICE" = "rk3126c" ]; then
+       mv u-boot/trust_emmc.img u-boot/trust.img
+       echo "rename trust_emmc to trust"
+fi
+
 #trust: for rk3229 box WIDEVINE_LEVEL 1 must use ta trust
 if [ "$WIDEVINE_LEVEL" = "1" ]; then
   if [ "$DEVICE" = "rk322x_box" ]; then
