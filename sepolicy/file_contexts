@@ -155,3 +155,6 @@
 
 #for recovery
 /backup(/.*)?               u:object_r:system_file:s0
+
+#for multi-ethernet interface
+/system/bin/lan_bridge_on.sh	u:object_r:lan_bridge_on_exec:s0

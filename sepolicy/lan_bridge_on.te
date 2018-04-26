@@ -1,0 +1,3 @@
+type lan_bridge_on, domain;
+type lan_bridge_on_exec, exec_type, file_type;
+init_daemon_domain(lan_bridge_on)
