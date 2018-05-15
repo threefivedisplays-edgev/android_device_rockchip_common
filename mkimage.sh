@@ -13,12 +13,14 @@ PLATFORM_SECURITY_PATCH=`get_build_var PLATFORM_SECURITY_PATCH`
 TARGET_BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
 BOARD_SYSTEMIMAGE_PARTITION_SIZE=`get_build_var BOARD_SYSTEMIMAGE_PARTITION_SIZE`
 BOARD_USE_SPARSE_SYSTEM_IMAGE=`get_build_var BOARD_USE_SPARSE_SYSTEM_IMAGE`
+HIGH_RELIABLE_RECOVERY_OTA=`get_build_var HIGH_RELIABLE_RECOVERY_OTA`
 echo TARGET_BOARD_PLATFORM=$TARGET_BOARD_PLATFORM
 echo TARGET_PRODUCT=$TARGET_PRODUCT
 echo TARGET_HARDWARE=$TARGET_HARDWARE
 echo TARGET_BUILD_VARIANT=$TARGET_BUILD_VARIANT
 echo BOARD_SYSTEMIMAGE_PARTITION_SIZE=$BOARD_SYSTEMIMAGE_PARTITION_SIZE
 echo BOARD_USE_SPARSE_SYSTEM_IMAGE=$BOARD_USE_SPARSE_SYSTEM_IMAGE
+echo HIGH_RELIABLE_RECOVERY_OTA=$HIGH_RELIABLE_RECOVERY_OTA
 TARGET="withoutkernel"
 if [ "$1"x != ""x  ]; then
          TARGET=$1
@@ -159,6 +161,17 @@ else
 	echo "$UBOOT_PATH/uboot.img not fount! Please make it from $UBOOT_PATH first!"
 fi
 
+if [ "$HIGH_RELIABLE_RECOVERY_OTA" = "true" ]; then
+	if [ -f $UBOOT_PATH/uboot_ro.img ]
+	then
+		echo -n "HIGH_RELIABLE_RECOVERY_OTA is true. create uboot_ro.img..."
+		cp -a $UBOOT_PATH/uboot_ro.img $IMAGE_PATH/uboot_ro.img
+		echo "done."
+	else
+		echo "$UBOOT_PATH/uboot_ro.img not fount! Please make it from $UBOOT_PATH first!"
+	fi
+fi
+
 if [ -f $UBOOT_PATH/trust.img ]
 then
         echo -n "create trust.img..."
@@ -166,6 +179,17 @@ then
         echo "done."
 else    
         echo "$UBOOT_PATH/trust.img not fount! Please make it from $UBOOT_PATH first!"
+fi
+
+if [ "$HIGH_RELIABLE_RECOVERY_OTA" = "true" ]; then
+	if [ -f $UBOOT_PATH/trust.img ]
+	then
+		echo -n "HIGH_RELIABLE_RECOVERY_OTA is true. create trust_ro.img..."
+		cp -a $UBOOT_PATH/trust.img $IMAGE_PATH/trust_ro.img
+		echo "done."
+	else
+		echo "$UBOOT_PATH/trust.img not fount! Please make it from $UBOOT_PATH first!"
+	fi
 fi
 
 if [ -f $UBOOT_PATH/*_loader_*.bin ]
@@ -207,9 +231,20 @@ fi
 
 if [ -f $PARAMETER ]
 then
-        echo -n "create parameter..."
-        cp -a $PARAMETER $IMAGE_PATH/parameter.txt
-        echo "done."
+				if [ "$HIGH_RELIABLE_RECOVERY_OTA" = "true" ]; then
+	        echo -n "create parameter...HIGH_RELIABLE_RECOVERY_OTA is ture. "
+	        echo -n "create parameter from hrr..."
+	        if [ -f $PARAMETER ]; then
+						cp -a ${TARGET_DEVICE_DIR}/parameter_hrr.txt $IMAGE_PATH/parameter.txt
+						echo "done."
+	        else
+						echo "${TARGET_DEVICE_DIR}/parameter_hrr.txt not fount! Please make it from ${TARGET_DEVICE_DIR} first!"
+	        fi
+	      else
+					echo -n "create parameter..."
+	        cp -a $PARAMETER $IMAGE_PATH/parameter.txt
+	        echo "done."
+	      fi
 else
         echo "$PARAMETER not fount!"
 fi
