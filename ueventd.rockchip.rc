@@ -401,6 +401,8 @@
 /dev/block/rknand_frp 0660 system system
 /dev/block/platform/1021c000.rksdmmc/by-name/frp 0660 system system
 
+#for baseparameter function
+/dev/block/by-name/baseparameter 0660 system system
 /dev/cpu_state 0666 system system
 /dev/chip_state 0666 system system
 /dev/i2c-1 0660 system system

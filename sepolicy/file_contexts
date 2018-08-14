@@ -93,6 +93,7 @@
 /dev/block/platform/ff0f0000.dwmmc/by-name/userdata u:object_r:userdata_block_device:s0
 /dev/block/platform/ff0f0000.dwmmc/by-name/boot u:object_r:boot_block_device:s0
 /dev/block/platform/ff0f0000.dwmmc/by-name/recovery u:object_r:recovery_block_device:s0
+/dev/block/platform/ff0f0000.dwmmc/by-name/baseparameter u:object_r:baseparameter_block_device:s0
 
 #for 312x emmc device
 /dev/block/platform/1021c000.rksdmmc/by-name/frp u:object_r:frp_block_device:s0

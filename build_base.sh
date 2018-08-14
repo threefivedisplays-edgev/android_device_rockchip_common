@@ -115,7 +115,7 @@ fi
 
 
 mkdir -p $PACK_TOOL_DIR/rockdev/Image/
-cp -f $IMAGE_PATH/* $PACK_TOOL_DIR/rockdev/Image/
+cp -rf $IMAGE_PATH/* $PACK_TOOL_DIR/rockdev/Image/
 
 echo "Make update.img"
 cd $PACK_TOOL_DIR/rockdev && ./mkupdate.sh
