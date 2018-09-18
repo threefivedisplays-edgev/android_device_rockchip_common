@@ -65,9 +65,17 @@ ifeq ($(strip $(BOARD_BASEPARAMETER_SUPPORT)), true)
     ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3399)
     LOCAL_POST_PROCESS_COMMAND :=$(shell cp -a device/rockchip/common/parameter_have_baseparameter.txt device/rockchip/rk3399/rk3399_all/parameter.txt)
     endif
+
+    ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3288)
+    LOCAL_POST_PROCESS_COMMAND :=$(shell cp -a device/rockchip/common/parameter_have_baseparameter_3288.txt $(TARGET_DEVICE_DIR)/parameter.txt)
+    endif
 else
     ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3399)
     LOCAL_POST_PROCESS_COMMAND :=$(shell cp -a device/rockchip/common/parameter_no_baseparameter.txt device/rockchip/rk3399/rk3399_all/parameter.txt)
+    endif
+
+    ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3288)
+    LOCAL_POST_PROCESS_COMMAND :=$(shell cp -a device/rockchip/common/parameter_no_baseparameter_3288.txt $(TARGET_DEVICE_DIR)/parameter.txt)
     endif
 endif
 
