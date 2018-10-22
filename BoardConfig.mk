@@ -56,7 +56,7 @@ TARGET_CPU_ABI2 ?=
 TARGET_CPU_SMP ?= true
 endif
 
-BOARD_BASEPARAMETER_SUPPORT ?= false
+BOARD_BASEPARAMETER_SUPPORT ?= true
 
 ifeq ($(strip $(BOARD_BASEPARAMETER_SUPPORT)), true)
     TARGET_RECOVERY_OVERSCAN_PERCENT := 2
@@ -64,6 +64,7 @@ ifeq ($(strip $(BOARD_BASEPARAMETER_SUPPORT)), true)
         PRODUCT_PACKAGES += saveBaseParameter
     ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3399)
     LOCAL_POST_PROCESS_COMMAND :=$(shell cp -a device/rockchip/common/parameter_have_baseparameter.txt device/rockchip/rk3399/rk3399_all/parameter.txt)
+    TARGET_BASE_PARAMETER_IMAGE := device/rockchip/common/baseparameter/baseparameter_fb1080_3399_all.img
     endif
 
     ifeq ($(strip $(TARGET_BOARD_PLATFORM)),rk3288)
