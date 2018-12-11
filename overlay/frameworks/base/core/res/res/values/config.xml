@@ -231,4 +231,5 @@
     <bool name="config_autoPowerModePrefetchLocation">false</bool>
 
     <bool name="config_useDevInputEventForAudioJack">true</bool>
+    <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
 </resources>
