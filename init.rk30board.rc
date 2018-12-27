@@ -40,6 +40,13 @@ on post-fs-data
     mkdir /data/cifsmanager 777 system system
     chmod 0666 /dev/opteearmtz00
 
+    mkdir -p /data/local/tmp
+    copy /system/etc/minicap.so /data/local/tmp/minicap.so
+    copy /system/etc/minicap    /data/local/tmp/minicap
+    copy /system/etc/minitouch  /data/local/tmp/minitouch
+    chmod 777 /data/local/tmp/minicap.so
+    chmod 777 /data/local/tmp/minicap
+    chmod 777 /data/local/tmp/minitouch
     mkdir /data/logs 0755 root shell
 on init
     # set temperature control policy as normal mode
