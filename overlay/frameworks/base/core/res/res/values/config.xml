@@ -232,4 +232,5 @@
 
     <bool name="config_useDevInputEventForAudioJack">true</bool>
     <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
+    <bool name="config_dreamsEnabledByDefault">false</bool>
 </resources>
