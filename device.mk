@@ -478,6 +478,8 @@ endif
 #whtest for bin
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/whtest.sh:system/bin/whtest.sh
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/pidstat:system/bin/pidstat
 
 # for preinstall
 PRODUCT_COPY_FILES += \
