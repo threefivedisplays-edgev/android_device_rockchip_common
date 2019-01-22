@@ -228,6 +228,9 @@ on boot
     chmod 0666 /sys/class/hwmon/hwmon0/mode
     chmod 0666 /sys/class/hwmon/hwmon0/enable
 
+    #add for led
+    chmod 0666 /sys/class/leds/sys_led/trigger
+
     restorecon_recursive /dev/block/platform/fe330000.sdhci/by-name/
     #for tee
     restorecon /system/bin/tee-supplicant
