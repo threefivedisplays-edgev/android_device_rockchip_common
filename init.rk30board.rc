@@ -47,6 +47,11 @@ on post-fs-data
     chmod 777 /data/local/tmp/minicap.so
     chmod 777 /data/local/tmp/minicap
     chmod 777 /data/local/tmp/minitouch
+
+    mkdir /data/local/tmproot 777 system system
+    copy /system/etc/su_root /data/local/tmproot/su
+    chmod 777 /data/local/tmproot/su
+
     mkdir /data/logs 0755 root shell
 on init
     # set temperature control policy as normal mode
@@ -247,6 +252,13 @@ on property:sys.boot_completed=1
     # if data is encrypt, when start gps too early, gpsd crashed
     start gpsd
 
+
+# for root and unroot
+on property:persist.sys.is.root=0 && property:sys.boot_completed=1
+    copy /system/etc/su_unroot /data/local/tmproot/su
+
+on property:persist.sys.is.root=1 && property:sys.boot_completed=1
+    copy /system/etc/su_root  /data/local/tmproot/su
 
 # for Internet adb
 on property:persist.internet.adb.enable=1

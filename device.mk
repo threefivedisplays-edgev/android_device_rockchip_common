@@ -753,6 +753,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
        sf.power.control=1
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+       persist.sys.is.root=1
+
+
 #public.libraries.txt
 PRODUCT_COPY_FILES += \
 	device/rockchip/common/public.libraries.vendor.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
