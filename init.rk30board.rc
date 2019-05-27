@@ -243,6 +243,9 @@ on boot
 	
 	#add for buzzer
 	chmod 0666 /sys/class/w25q128fw/buzzer
+
+	#add for mac_addr
+	chmod 0666 /sys/class/w25q128fw/mac_addr
 	
     restorecon_recursive /dev/block/platform/fe330000.sdhci/by-name/
     #for tee
