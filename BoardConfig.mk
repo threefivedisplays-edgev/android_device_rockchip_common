@@ -431,7 +431,7 @@ endif
 CAMERA_SUPPORT_AUTOFOCUS ?= false
 
 # Enable UsbDevice to Mtp mode,default is charge mode
-BOARD_USB_ALLOW_DEFAULT_MTP ?= false
+BOARD_USB_ALLOW_DEFAULT_MTP ?= true
 
 # Support RootService ,support app to get root permission,default is close
 BOARD_ALLOW_ROOTSERVICE ?= false
