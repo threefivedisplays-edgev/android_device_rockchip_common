@@ -798,12 +798,28 @@ endif
 
 # mid used hdmi
 ifeq ($(strip $(BOARD_SHOW_HDMI_SETTING)), true)
+
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rk.hdmisetting=true
+    ro.rk.hdmisetting=true \
+    ro.hdmi.device_type=4
 
 PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml
+    $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
+PRODUCT_PACKAGES += \
+    rockchip.hardware.outputmanager@1.0-impl \
+    rockchip.hardware.outputmanager@1.0-service
+
+PRODUCT_PACKAGES += \
+    hdmi_cec.$(TARGET_BOARD_PLATFORM)
+
+# HDMI CEC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.tv.cec@1.0-impl \
+    android.hardware.tv.cec@1.0-service
+
+# Hw Output HAL
 PRODUCT_PACKAGES += \
     rockchip.hardware.outputmanager@1.0-impl \
     rockchip.hardware.outputmanager@1.0-service
