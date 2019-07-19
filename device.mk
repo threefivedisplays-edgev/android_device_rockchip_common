@@ -52,7 +52,7 @@ else ifeq ($(strip $(BUILD_WITH_GO_OPT))|$(strip $(TARGET_ARCH)) ,true|arm64)
 else
 # Normal tablet, add QuickStep for normal product only.
   $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-  PRODUCT_PACKAGES += Launcher3QuickStep
+  PRODUCT_PACKAGES += Launcher3
 endif
 
 PRODUCT_AAPT_CONFIG ?= normal large xlarge hdpi xhdpi xxhdpi
@@ -164,7 +164,7 @@ endif
 
 ifneq ($(filter atv box, $(strip $(TARGET_BOARD_PLATFORM_PRODUCT))), )
     PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
+      #$(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
       $(LOCAL_PATH)/tv/permissions/privapp-permissions-tv-common.xml:system/etc/permissions/privapp-permissions-tv-common.xml
 endif
 
@@ -804,7 +804,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi.device_type=4
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
+    #$(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
 PRODUCT_PACKAGES += \
