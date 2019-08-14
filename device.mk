@@ -362,7 +362,12 @@ PRODUCT_PACKAGES += \
     akmd \
     libion_ext
 
-
+# libwiringPi
+PRODUCT_PACKAGES += \
+	libwiringPi \
+	libwiringPiDev \
+	gpio
+	
 # Light HAL
 ifneq ($(TARGET_BOARD_PLATFORM_PRODUCT), atv)
 PRODUCT_PACKAGES += \
