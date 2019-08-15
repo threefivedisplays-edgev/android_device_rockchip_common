@@ -32,3 +32,6 @@ type cec_device, dev_type;
 
 #for hid audio
 type hidraw_device, dev_type;
+
+#for pcie
+type sda_block_device, dev_type;

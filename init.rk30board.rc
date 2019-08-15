@@ -355,6 +355,10 @@ service rk_store_keybox /vendor/bin/rk_store_keybox
     class main
     oneshot		
 
+service fuse_pcie0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/pcie0 /storage/pcie0
+    class late_start
+    disabled
+	
 #vts audio property
 on property:vts.native_server.on=1
     setprop vendor.vts_test true
