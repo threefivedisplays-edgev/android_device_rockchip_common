@@ -217,8 +217,8 @@ on boot
 
     #add for cooling fan
     chmod 0666 /sys/class/thermal/cooling_device0/cur_state
-    chmod 0666 /sys/class/hwmon/hwmon0/mode
-    chmod 0666 /sys/class/hwmon/hwmon0/enable
+    chmod 0666 /sys/class/hwmon/hwmon1/mode
+    chmod 0666 /sys/class/hwmon/hwmon1/enable
 
     #add for led
     chmod 0666 /sys/class/leds/sys_led/trigger
