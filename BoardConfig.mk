@@ -214,7 +214,7 @@ ART_USE_HSPACE_COMPACT ?= true
 TARGET_USES_LOGD ?= true
 
 # Sepolicy
-PRODUCT_SEPOLICY_SPLIT := true
+PRODUCT_SEPOLICY_SPLIT := false
 BOARD_SEPOLICY_DIRS ?= \
     device/rockchip/common/sepolicy/vendor 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR ?= device/rockchip/common/sepolicy/public
@@ -365,7 +365,7 @@ BOARD_FORCE_UDISK_VISIBLE ?= true
 BOARD_DISABLE_SAFE_MODE ?= true
 
 #enable 3g dongle
-BOARD_HAVE_DONGLE ?= false
+BOARD_HAVE_DONGLE ?= true
 
 #for boot and shutdown animation ringing
 BOOT_SHUTDOWN_ANIMATION_RINGING ?= false
