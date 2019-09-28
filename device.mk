@@ -757,10 +757,6 @@ endif
 
 $(call inherit-product-if-exists, vendor/rockchip/common/device-vendor.mk)
 
-ifeq ($(BUILD_WITH_ROOT_CONFIG),true)
-$(call inherit-product-if-exists, vendor/rockchip/root/root.mk)
-endif
-
 ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
 $(call inherit-product-if-exists, vendor/rockchip/google/gapps.mk)
 endif
@@ -1073,8 +1069,6 @@ endif
 #TWRP
 BOARD_TWRP_ENABLE ?= false
 
-PRODUCT_PROPERTY_OVERRIDES += \
-       persist.sys.is.root=1
 #Build with UiMode Config
 PRODUCT_COPY_FILES += \
 	device/rockchip/common/uimode/package_uimode_config.xml:vendor/etc/package_uimode_config.xml
