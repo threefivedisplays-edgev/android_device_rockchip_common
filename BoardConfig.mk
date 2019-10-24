@@ -31,7 +31,7 @@ TARGET_BOARD_HARDWARE ?= rk30board
 # It indicates whether to be tablet platform or not
 
 # support devices to install magisk through include ramdisk in boot.img
-BOOTIMG_SUPPORT_MAGISK := false
+BOOTIMG_SUPPORT_MAGISK := true
 
 ifneq ($(filter %box, $(TARGET_PRODUCT)), )
 TARGET_BOARD_PLATFORM_PRODUCT ?= box
