@@ -226,7 +226,7 @@ on boot
     chmod 0666 /sys/class/wol/rst_mcu
 	#add for buzzer
 	chmod 0666 /sys/class/w25q128fw/buzzer
-
+	chmod 0666 /sys/class/wol/ageing_test
 	#add for mac_addr
 	chmod 0666 /sys/class/w25q128fw/mac_addr
 	chmod 0666 /sys/class/wol/mac_addr
