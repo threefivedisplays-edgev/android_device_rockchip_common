@@ -164,7 +164,6 @@ endif
 
 ifneq ($(filter atv box, $(strip $(TARGET_BOARD_PLATFORM_PRODUCT))), )
     PRODUCT_COPY_FILES += \
-      #$(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
       $(LOCAL_PATH)/tv/permissions/privapp-permissions-tv-common.xml:system/etc/permissions/privapp-permissions-tv-common.xml
 endif
 
@@ -805,7 +804,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi.device_type=4
 
 PRODUCT_COPY_FILES += \
-    #$(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
 PRODUCT_PACKAGES += \
