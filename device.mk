@@ -942,6 +942,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
       $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml
 
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
+PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+PRODUCT_PACKAGES += \
+	hdmi_cec.$(TARGET_BOARD_PLATFORM)
+
+# HDMI CEC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.tv.cec@1.0-impl \
+    android.hardware.tv.cec@1.0-service
 PRODUCT_PACKAGES += \
     rockchip.hardware.outputmanager@1.0-impl \
     rockchip.hardware.outputmanager@1.0-service
