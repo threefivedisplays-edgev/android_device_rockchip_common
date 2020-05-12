@@ -939,8 +939,6 @@ ifeq ($(strip $(BOARD_SHOW_HDMI_SETTING)), true)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rk.hdmisetting=true
 
-PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/resolution_white.xml:/system/usr/share/resolution_white.xml
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
