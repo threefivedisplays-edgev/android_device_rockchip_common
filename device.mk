@@ -887,6 +887,9 @@ endif
 
 $(call inherit-product-if-exists, vendor/rockchip/common/device-vendor.mk)
 
+ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
+$(call inherit-product-if-exists, vendor/rockchip/google/gapps.mk)
+endif
 ########################################################
 # this product has support remotecontrol or not
 ########################################################

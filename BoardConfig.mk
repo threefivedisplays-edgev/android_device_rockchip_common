@@ -448,7 +448,7 @@ endif
 CAMERA_SUPPORT_AUTOFOCUS ?= false
 
 # Enable UsbDevice to Mtp mode,default is charge mode
-BOARD_USB_ALLOW_DEFAULT_MTP ?= false
+BOARD_USB_ALLOW_DEFAULT_MTP ?= true
 
 HIGH_RELIABLE_RECOVERY_OTA := false
 BOARD_USES_FULL_RECOVERY_IMAGE := false
