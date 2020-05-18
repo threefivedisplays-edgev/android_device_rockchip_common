@@ -2,14 +2,14 @@
 # system.prop
 #
 
-#rild.libpath=/system/lib/libreference-ril.so
-#rild.libargs=-d /dev/ttyUSB2
+rild.libpath=/vendor/lib64/libem06-ril.so
+rild.libargs=-d /dev/ttyUSB2
 # Default ecclist
 ro.ril.ecclist=112,911
 ro.opengles.version = 131072
 wifi.interface=wlan0
-rild.libpath=/system/lib/libril-rk29-dataonly.so
-rild.libargs=-d /dev/ttyACM0
+#rild.libpath=/system/lib/libril-rk29-dataonly.so
+#rild.libargs=-d /dev/ttyACM0
 persist.tegra.nvmmlite = 1
 ro.audio.monitorOrientation=true
 
