@@ -65,7 +65,7 @@ endif
 
 # Enable android verified boot 2.0
 BOARD_AVB_ENABLE ?= false
-BOARD_SELINUX_ENFORCING ?= true
+BOARD_SELINUX_ENFORCING ?= false
 
 ifneq ($(filter true, $(BOARD_AVB_ENABLE)), )
 BOARD_KERNEL_CMDLINE := androidboot.wificountrycode=US androidboot.hardware=rk30board androidboot.console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro init=/init
@@ -224,7 +224,7 @@ ART_USE_HSPACE_COMPACT ?= true
 TARGET_USES_LOGD ?= true
 
 # Sepolicy
-PRODUCT_SEPOLICY_SPLIT := true
+PRODUCT_SEPOLICY_SPLIT := false
 BOARD_SEPOLICY_DIRS ?= \
     device/rockchip/common/sepolicy/vendor
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR ?= device/rockchip/common/sepolicy/public

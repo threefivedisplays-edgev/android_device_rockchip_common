@@ -2,8 +2,10 @@
 # system.prop
 #
 
-rild.libpath=/vendor/lib64/libem06-ril.so
-rild.libargs=-d /dev/ttyUSB2
+vendor.rild.libpath=/vendor/lib64/libem06-ril.so
+vendor.rild.libargs=-d /dev/ttyUSB2
+rild.libpath=/system/lib/libril-rk29-dataonly.so
+rild.libargs=-d /dev/ttyACM0
 # Default ecclist
 ro.ril.ecclist=112,911
 ro.opengles.version = 131072

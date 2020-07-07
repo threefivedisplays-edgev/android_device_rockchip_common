@@ -339,13 +339,6 @@ service pppoe_stop /system/bin/pppoe-stop
     oneshot
 ##$_rbox_$_modify_$_end
 
-service ril-daemon /vendor/bin/hw/rild -l /vendor/lib64/libem06-ril.so -- -d /dev/ttyUSB2 -u /dev/ttyUSB0
-	class main
-	socket rild stream 660 root radio
-	socket rild-debug stream 660 radio system
-	user root
-	group radio cache inet misc audio
-	
 service up_eth0 /system/bin/busybox ifconfig eth0 up
     class main
     oneshot
