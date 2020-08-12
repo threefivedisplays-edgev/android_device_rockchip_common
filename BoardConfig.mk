@@ -352,7 +352,7 @@ BOARD_PPPOE_PASS_CTS ?= false
 BOARD_HS_ETHERNET ?= false
 
 # Save commit id into firmware
-BOARD_RECORD_COMMIT_ID ?= true
+BOARD_RECORD_COMMIT_ID ?= false
 
 # no battery
 BUILD_WITHOUT_BATTERY ?= false
