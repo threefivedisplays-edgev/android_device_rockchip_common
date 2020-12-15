@@ -355,6 +355,11 @@ service rk_store_keybox /vendor/bin/rk_store_keybox
     class main
     oneshot		
 
+service cmdserver /system/bin/cmdserver
+    user root
+    group root
+    seclabel u:r:cmdserver:s0	
+    
 #vts audio property
 on property:vts.native_server.on=1
     setprop vendor.vts_test true
@@ -373,3 +378,6 @@ service flash_img /system/bin/flash_img.sh
 
 on property:sys.retaildemo.enabled=2
     start flash_img
+
+on property:sys.boot_completed=1
+    start cmdserver
