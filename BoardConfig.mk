@@ -145,7 +145,7 @@ DEVICE_HAVE_LIBRKVPU ?= true
 #90:  rotate_90
 #180: rotate_180
 #270: rotate_270
-ROTATE_SCREEN ?= rotate_0
+ROTATE_SCREEN ?= rotate_90
 
 #Screen to Double, Single
 #YES: Screen to Double
