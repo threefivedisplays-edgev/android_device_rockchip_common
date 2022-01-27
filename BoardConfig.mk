@@ -442,6 +442,9 @@ BOARD_DEFAULT_CAMERA_HAL_VERSION ?=3.3
 
 BOARD_USES_AB_IMAGE ?= false
 
+# Enable boot animation
+BOOT_VIDEO_ENABLE ?= true
+
 ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     AB_OTA_UPDATER := true
     TARGET_NO_RECOVERY := true
