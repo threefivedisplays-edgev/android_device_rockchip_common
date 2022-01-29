@@ -938,6 +938,8 @@ ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT),box)
   PRODUCT_PROPERTY_OVERRIDES += \
        ro.target.product=box \
        media.stagefright.extractremote=false
+   PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/bootanimation.zip:/system/media/bootanimation.zip
 
 else ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT),atv)
   PRODUCT_PROPERTY_OVERRIDES += \
@@ -949,12 +951,19 @@ else ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT),atv)
 else ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT),vr)
   PRODUCT_PROPERTY_OVERRIDES += \
         ro.target.product=vr
+  PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/bootanimation.zip:/system/media/bootanimation.zip
 else ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT),laptop)
   PRODUCT_PROPERTY_OVERRIDES += \
         ro.target.product=laptop
+  PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/bootanimation.zip:/system/media/bootanimation.zip
+		
 else
   PRODUCT_PROPERTY_OVERRIDES += \
         ro.target.product=tablet
+  PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/bootanimation.zip:/system/media/bootanimation.zip
 endif
 
 ifeq ($(strip $(BOARD_ALLOW_ROOTSERVICE)), true)
